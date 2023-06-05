@@ -1,0 +1,20 @@
+<div class="w-full p-6">
+  <!-- menu row -->
+  <div class="flex">
+    <div class="flex-grow">
+      <p class="text-3xl font-bold text-primary ">Sheldon Schimmel</p>
+      <p class="text-xl font-bold">Data manager(organiser)</p>
+    </div>
+    <div>
+        <select class="select w-full max-w-xs shadow-xl border border-base-100 bg-white focus:outline-none" title="select role">
+          <option disabled selected>Select Tournament</option>
+          <option>Team 1</option>
+        </select>
+    </div>
+  </div>
+  <div class="mt-12 w-full">
+    <p class="font-sembibold text-2xl mb-5">Scoreboard</p>
+    <app-inner-table
+      [table]="table"></app-inner-table>
+  </div>
+</div>

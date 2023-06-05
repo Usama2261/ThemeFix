@@ -1,0 +1,12 @@
+<div class="h-80 flex flex-col items-center justify-center" *ngIf="type!='confirm'">
+  <p class="text-4xl font-bold" [ngClass]="textClass">{{title}}!</p>
+  <p>{{message}}</p>
+</div>
+<div class="h-80 flex flex-col items-center justify-center" *ngIf="type=='confirm'">
+  <p class="text-4xl font-bold text-primary">Confirmation</p>
+  <p>{{message}}</p>
+  <div class="flex gap-3 mt-5">
+    <button class="btn btn-primary btn-sm text-white" (click)="onAction(true)">Yes</button>
+    <button class="btn btn-primary btn-sm btn-outline" (click)="onAction(false)">No</button>
+  </div>
+</div>

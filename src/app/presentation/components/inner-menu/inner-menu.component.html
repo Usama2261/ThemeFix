@@ -1,0 +1,22 @@
+<ul class="menu bg-white w-full">
+  <li *ngFor="let menu of menus" class="border-b ">
+    <a [routerLink]="menu.route" routerLinkActive="">
+      <div class="w-full flex flex-row items-center justify-center">
+
+        <div class="w-auto pr-2 h-10 flex items-center justify-center">
+          <svg class="w-4" [attr.viewBox]="menu.viewBox" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path [routerLink]="menu.route" routerLinkActive="fill-primary" [attr.d]="menu.iconPath" fill="#1A1A1A" />
+          </svg>
+        </div>
+        <div class="flex-grow">
+          <p routerLinkActive="text-primary">{{menu.name}}</p>
+        </div>
+        <svg class="w-2" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path routerLinkActive="fill-primary"
+            d="M0.420441 14.764L6.73509 8.43555L0.420441 2.10712L2.36447 0.163086L10.6369 8.43555L2.36447 16.708L0.420441 14.764Z"
+            fill="#1A1A1A" />
+        </svg>
+      </div>
+    </a>
+  </li>
+</ul>

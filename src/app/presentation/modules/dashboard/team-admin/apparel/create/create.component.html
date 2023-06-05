@@ -1,0 +1,167 @@
+<app-modal [buttonClasses]="'text-error'" [toggleModal]="toggleModal">
+  <app-inner-button type="add" buttonContent></app-inner-button>
+  <div modalContent>
+    <div class="flex flex-col" *ngIf="!message">
+      <div class="w-full text-center">
+        <p class="font-bold text-primary">Add new Apparel</p>
+      </div>
+      <div class="w-full flex flex-row justify-center text-center mt-5">
+        <table>
+          <tr>
+            <td class="text-center pt-4 bg-primary text-white head22 ">Home Games</td>
+             
+            <td class="text-center pt-4 bg-primary text-white head22">Away Games</td>
+             
+          </tr>
+          <tr>
+		  <td class="text-center pt-4  bgc2" (click)="showShirtHomeApparel($event) ">  <img src="assets/shirt.jpg" />  </td>
+            
+            <td class="text-center pt-4 bgc2" (click)="showShirtAwayApparel($event)">    <img src="assets/shirt.jpg" />   </td>
+            
+          </tr>
+         
+         
+          <tr *ngIf="shirthome || shirtaway " >
+            <td class="text-left pt-4" > <span *ngIf="shirthome">Start date: 
+             
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span>
+            </td>
+            <td class="text-left pt-4" > <span *ngIf="shirtaway">Start date: 
+             
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span>
+            </td>
+             
+          </tr>
+          <tr  *ngIf="shirthome || shirtaway " >
+            <td class="text-left pt-4" > <span *ngIf="shirthome">End date: 
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="shirtaway">End date: 
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+          <tr  *ngIf="shirthome || shirtaway " >
+            <td class="text-left pt-4" > <span *ngIf="shirthome">Color : 
+              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="shirtaway">Color  : 
+              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+          <tr  *ngIf="shirthome || shirtaway " >
+            <td class="text-left pt-4" > <span *ngIf="shirthome">Picture  : 
+              <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="shirtaway">Picture : 
+              <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+          <tr>
+            <td class="text-center pt-4" (click)="showShortHomeApparel($event)">    <img src="assets/shorts.jpg" />   </td>
+            
+            <td class="text-center pt-4" (click)="showShortAwayApparel($event)">   <img src="assets/shorts.jpg" />   </td>
+            
+          </tr>
+          <tr *ngIf="shorthome || shortaway " >
+            <td class="text-left pt-4" > <span *ngIf="shorthome">Start date:
+
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span>
+            </td>
+            <td class="text-left pt-4" > <span *ngIf="shortaway">Start date:
+
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span>
+            </td>
+
+          </tr>
+          <tr  *ngIf="shorthome || shortaway " >
+            <td class="text-left pt-4" > <span *ngIf="shorthome">End date:
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="shortaway">End date:
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+          <tr  *ngIf="shorthome || shortaway " >
+            <td class="text-left pt-4" > <span *ngIf="shorthome">Color :
+              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="shortaway">Color  :
+              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+          <tr  *ngIf="shorthome || shortaway " >
+            <td class="text-left pt-4" > <span *ngIf="shorthome">Picture  :
+              <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="shortaway">Picture :
+              <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+
+
+          <tr>
+            <td class="text-center pt-4" (click)="showSocksHomeApparel($event)"> Socks    <img src="assets/socks.jpg" />   </td>
+            
+            <td class="text-center pt-4" (click)="showSocksAwayApparel($event)"> Socks     <img src="assets/socks.jpg" />      </td>
+            
+          </tr>
+          <tr *ngIf="sockshome || socksaway " >
+            <td class="text-left pt-4" > <span *ngIf="sockshome">Start date:
+
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span>
+            </td>
+            <td class="text-left pt-4" > <span *ngIf="socksaway">Start date:
+
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span>
+            </td>
+
+          </tr>
+          <tr  *ngIf="sockshome || socksaway " >
+            <td class="text-left pt-4" > <span *ngIf="sockshome">End date:
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="socksaway">End date:
+              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+          <tr  *ngIf="sockshome || socksaway " >
+            <td class="text-left pt-4" > <span *ngIf="sockshome">Color :
+              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="socksaway">Color  :
+              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+          <tr  *ngIf="sockshome || socksaway " >
+            <td class="text-left pt-4" > <span *ngIf="sockshome">Picture  :
+              <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+            </span></td>
+            <td class="text-left pt-4" > <span *ngIf="socksaway">Picture :
+              <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+            </span></td>
+          </tr>
+ 
+
+ 
+
+
+        </table>
+      </div>
+      <div class="w-full text-center mt-4">
+        <button class="btn btn-primary btn-outline" (click)="add()">
+          Add
+        </button>
+        <button class="btn btn-primary ml-4 text-white">
+          Reset
+        </button>
+      </div>
+    </div>
+    <app-alert *ngIf="message" [type]="message.type" [title]="message.title" [message]="message.message"></app-alert>
+  </div>
+</app-modal>

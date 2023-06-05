@@ -1,0 +1,47 @@
+<div class="mt-5">
+  <app-inner-tabs type="dynamic">
+    <app-inner-tab [active]="step==1" [name]="'Details'" (click)="step=1"></app-inner-tab>
+    <app-inner-tab [active]="step==2" [name]="'1'" (click)="step=2"></app-inner-tab>
+    <app-inner-tab [active]="step==3" [name]="'2'" (click)="step=3"></app-inner-tab>
+    <app-inner-tab [active]="step==4" [name]="'3'" (click)="step=4"></app-inner-tab>
+    <app-inner-tab [active]="step==5" [name]="'4'" (click)="step=5"></app-inner-tab>
+    <!-- <app-inner-tab [active]="step==6" [name]="'5'" (click)="step=6"></app-inner-tab>
+    <app-inner-tab [active]="step==7" [name]="'6'" (click)="step=7"></app-inner-tab> -->
+    <app-inner-tab [active]="step==6" [name]="'5'" (click)="step=6"></app-inner-tab>
+    <app-inner-tab [active]="step==7" [name]="'6'" (click)="step=7"></app-inner-tab>
+    <app-inner-tab [active]="step==8" [name]="'7'" (click)="step=8"></app-inner-tab>
+    <app-inner-tab [active]="step==9" [name]="'8'" (click)="step=9"></app-inner-tab>
+    <!-- <app-inner-tab [active]="step==12" [name]="'11'" (click)="step=12"></app-inner-tab>
+    <app-inner-tab [active]="step==13" [name]="'12'" (click)="step=13"></app-inner-tab> -->
+  </app-inner-tabs>
+</div>
+<div class=" min-h-[400px]">
+  <div [ngSwitch]="step">
+    <app-upload-details *ngSwitchCase="1"></app-upload-details>
+    <app-upload-results *ngSwitchCase="2"></app-upload-results>
+    <app-upload-officials-and-players *ngSwitchCase="3"></app-upload-officials-and-players>
+    <app-starting-players *ngSwitchCase="4"></app-starting-players>
+    <app-reserve-players *ngSwitchCase="5"></app-reserve-players>
+    <app-upload-goals *ngSwitchCase="6"></app-upload-goals>
+    <!-- <app-upload-warnings *ngSwitchCase="7"></app-upload-warnings>
+    <app-upload-expulsions *ngSwitchCase="8"></app-upload-expulsions> -->
+    <app-substitutions *ngSwitchCase="7"></app-substitutions>
+    <app-preparations-and-conditions *ngSwitchCase="8"></app-preparations-and-conditions>
+    <app-assistant-officials *ngSwitchCase="9"></app-assistant-officials>
+    <!-- <app-uploads-suggestions *ngSwitchCase="12"></app-uploads-suggestions>
+    <app-incident-reports *ngSwitchCase="13"></app-incident-reports> -->
+  </div>
+</div>
+<div class="w-full flex justify-center mt-5">
+  <div class="flex gap-5">
+    <div class="btn btn-primary btn-outline">
+      Reset
+    </div>
+    <button class="btn btn-primary text-white">
+      Save Draft
+    </button>
+    <button class="btn btn-primary text-white" (click)="next()">
+     {{step == 9 ? 'Submit' : 'Next'}}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="tabs" *ngIf="type=='routed'">
+  <a
+  class="tab tab-lg tab-lifted" *ngFor="let tab of tabs" routerLink="{{tab.route}}"
+  routerLinkActive="bg-primary text-white">{{tab.name}}</a>
+  <a
+  class="tab tab-lg tab-lifted flex-grow"></a>
+
+</div>
+<div class="tabs" *ngIf="type=='dynamic'">
+  <ng-content></ng-content>
+  <a
+  class="tab tab-lg tab-lifted flex-grow"></a>
+</div>

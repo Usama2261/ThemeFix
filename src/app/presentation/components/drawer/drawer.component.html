@@ -1,0 +1,23 @@
+<div class="drawer drawer-end h-0 ">
+  <input id="my-drawer" type="checkbox" class="drawer-toggle" #drawerSwitch title="switch drawer" />
+  <div class="drawer-side fixed h-full w-full z-20 top-0 right-0">
+    <label for="my-drawer" class="drawer-overlay"></label>
+    <div class="menu p-10 overflow-y-auto bg-base-100 text-base-content z-30 w-80" id="drawer">
+      <!-- close icon -->
+      <div class="w-full flex flex-row">
+        <div class="flex-grow">
+          <button (click)="_toggleDrawer()"
+            class="btn btn-sm btn-circle border-none bg-white text-base-300 hover:bg-base-100-focus">✕</button>
+        </div>
+        <div class="text-right">
+          <p class="text-xl font-semibold text-primary">{{title}}</p>
+          <p>{{subtitle}}</p>
+        </div>
+      </div>
+      <!-- Sidebar content here -->
+      <div class="py-5">
+        <ng-content select="[drawerContent]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

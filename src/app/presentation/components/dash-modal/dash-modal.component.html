@@ -1,0 +1,14 @@
+<label [for]="currentId" class="hover:cursor-pointer" (click)="_toggleModal()">
+  <ng-content select="[buttonContent]"></ng-content>
+</label>
+
+<input type="checkbox" class="bg-red" [id]="currentId" class="modal-toggle" title="modal close button" #modelSwitch/>
+<div class="modal custom-modal" >  <!--  [style.top.px]="modalTop" [style.left.px]="modalLeft"  >  -->
+  <div class="modal-box relative rounded-none w-auto max-w-none">
+    
+    <ng-content select="[modalContent]"></ng-content>
+    <div class="modal-action gap-4">
+      <ng-content select="[modalActions]"></ng-content>
+    </div>
+  </div>
+</div>

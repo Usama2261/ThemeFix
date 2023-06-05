@@ -1,0 +1,97 @@
+<app-inner-button type="filter"  (click)="_toggleDrawer()"></app-inner-button>
+<app-drawer [toggleDrawer]="toggleDrawer" title="Filter by" subtitle="Enable switch to show in list">
+  <div drawerContent>
+    <div class="w-full flex flex-col gap-2">
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Show all</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" checked title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Super admin</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" checked title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Team Admin</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" checked title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Team Manager</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">General Coordinator</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Referee</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Match commissioner</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Referee Accessor</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" checked title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">Data Manager</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" title="toggle filter"/>
+        </div>
+      </div>
+      <!-- filter -->
+      <div class="flex flex-row bg-white p-4">
+        <div class="flex-grow flex items-center">
+          <p class="text-sm">League director</p>
+        </div>
+        <div>
+          <input type="checkbox" class="toggle toggle-primary" checked title="toggle filter"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-drawer>

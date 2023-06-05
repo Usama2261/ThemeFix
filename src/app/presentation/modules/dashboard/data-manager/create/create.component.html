@@ -1,0 +1,21 @@
+<app-modal [buttonClasses]="'text-error'" [toggleModal]="toggleModal">
+  <app-inner-button type="add" buttonContent></app-inner-button>
+  <div modalContent>
+    <div class="w-[850px] flex flex-col items-center min-h-[350px]">
+      <div class="btn-group w-content">
+        <button class="btn btn-sm btn-outline btn-primary" (click)="form = 'match'" [ngClass]="{'btn-active text-white':form=='match'}">
+          <span [ngClass]="{'text-white':form=='match'}">New Match</span></button>
+        <button class="btn btn-sm btn-outline  btn-primary" (click)="form = 'tournament'" [ngClass]="{'btn-active text-white':form=='tournament'}">
+          <span [ngClass]="{'text-white':form=='tournament'}">New Tournament</span></button>
+      </div>
+      <div class="mt-5 w-full">
+        <app-data-manager-create-match
+          *ngIf="form=='match'"
+        ></app-data-manager-create-match>
+        <app-data-manager-create-tournament
+          *ngIf="form=='tournament'"
+        ></app-data-manager-create-tournament>
+      </div>
+    </div>
+  </div>
+</app-modal>

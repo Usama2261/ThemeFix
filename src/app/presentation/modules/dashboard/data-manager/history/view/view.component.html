@@ -1,0 +1,26 @@
+
+<div class="flex flex-col" *ngIf="!message">
+  <div class="w-full text-center">
+  </div>
+  <div class="w-full flex flex-row justify-center text-center mt-5">
+    <table>
+      <tr *ngIf="data?.prevPosition">
+        <td class="text-right pt-4">Previous Position</td>
+        <td class="pl-5">{{  data?.prevPosition }}   </td>
+      </tr>
+      <tr *ngIf="!data?.prevPosition">
+        <td class="text-right pt-4"></td>
+        <td class="pl-5">{{  data?.date }}   </td>
+      </tr>
+      <tr *ngIf="!data?.prevPosition">
+	      <td class=""> {{data?.teama}}  </td>
+        <td class="small-box">{{  data?.goala }}   </td>
+        <td class="small-box">{{  data?.goalb }}   </td>
+	      <td class=""> {{data?.teamb}}  </td>
+      </tr>
+      
+  
+    </table>
+  </div>
+
+

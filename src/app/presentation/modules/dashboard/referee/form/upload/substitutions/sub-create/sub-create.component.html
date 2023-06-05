@@ -1,0 +1,62 @@
+<app-modal [buttonClasses]="'text-error'" [toggleModal]="toggleModal">
+    <app-inner-button type="add" buttonContent></app-inner-button>
+    <div modalContent>
+      <div class="flex flex-col" *ngIf="!message">
+        <div class="w-full text-center">
+          <p class="font-bold text-primary">Add New Team</p>
+        </div>
+        <div class="w-full text-center flex flex-row justify-center text-center mt-5">
+          <table>
+            <tr>
+              <td class="text-right pt-4">Team:</td>
+              <td class="pl-5">
+                <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                  <option disabled selected>Select</option>
+                  <option>Dar es Salaam</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+                <td class="text-right pt-4">Activity:</td>
+                <td class="pl-5">
+                  <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                    <option disabled selected>Select</option>
+                    <option>In</option>
+                    <option>Out</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right pt-4">J/NO:</td>
+                <td class="pl-5">
+                  <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                    <option disabled selected>Select</option>
+                    <option>454</option>
+                    <option>542</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right pt-4">MNT:</td>
+                <td class="pl-5">
+                  <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                    <option disabled selected>Select</option>
+                    <option *ngFor="let item of [].constructor(200); let i = index;">{{i+1}}</option>
+                  </select>
+                </td>
+              </tr>
+          </table>
+        </div>
+        <div class="w-full text-center mt-4">
+          <button class="btn btn-primary btn-outline" (click)="add()">
+            Add
+          </button>
+          <button class="btn btn-primary ml-4 text-white">
+            Reset
+          </button>
+        </div>
+      </div>
+      <app-alert *ngIf="message" [type]="message.type" [title]="message.title" [message]="message.message"></app-alert>
+    </div>
+  </app-modal>
+  

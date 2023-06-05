@@ -1,0 +1,55 @@
+<div class="w-full p-6">
+  <!-- menu row -->
+  <div class="flex justify-end">
+    <div>
+      <app-inner-search></app-inner-search>
+    </div>
+    <div  *ngIf="activeTab === 1" class="flex flex-row gap-3">
+      <app-formation-create></app-formation-create>
+      <app-formation-columns></app-formation-columns>
+    </div>
+    <div  *ngIf="activeTab === 2" class="flex flex-row gap-3">
+      <app-position-create></app-position-create>
+      <app-position-columns></app-position-columns>
+    </div>
+    <div  *ngIf="activeTab === 3" class="flex flex-row gap-3">
+      <app-staff-create></app-staff-create>
+      <app-staff-columns></app-staff-columns>
+    </div>
+  </div>
+   
+  <div>
+    <app-inner-title title="Soccer Tactic"></app-inner-title>
+  </div>
+  <div class="tab-container">
+    <ul class="tab-list">
+      <li class="tab bg-primary  " (click)="activateTab(1)" [class.active]="activeTab === 1">Formation</li>
+      <li class="tab bg-primary  " (click)="activateTab(2)" [class.active]="activeTab === 2"> Position</li>
+      <li class="tab bg-primary  " (click)="activateTab(3)" [class.active]="activeTab === 3">Staff</li>
+    </ul>
+    <div class="tab-content">
+      <div *ngIf="activeTab === 1" class="tab-panel">
+        <app-tactics-formation></app-tactics-formation>
+      </div>
+      <div *ngIf="activeTab === 2" class="tab-panel">
+        <app-tactics-position></app-tactics-position>
+      </div>
+      <div *ngIf="activeTab === 3" class="tab-panel">
+        <app-tactics-staff></app-tactics-staff>
+      </div>
+    </div>
+  </div>
+  
+<app-modal [toggleModal]="toggleEditModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-tactics-edit [data]="editData"></app-tactics-edit>
+  </div>
+</app-modal>
+<app-modal [toggleModal]="toggleViewModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-tactics-view [data]="viewData"></app-tactics-view>
+  </div>
+</app-modal>
+

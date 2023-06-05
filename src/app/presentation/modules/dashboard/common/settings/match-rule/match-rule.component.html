@@ -1,0 +1,39 @@
+<div class="w-full p-6">
+   
+   <!-- menu row -->
+    
+    <div class="flex flex-row gap-3">
+      <card-rule-create></card-rule-create>
+      <card-rule-columns></card-rule-columns>
+      <card-rule-filter></card-rule-filter>
+    </div>
+  </div> 
+  <div>
+    <app-inner-title title="Match Rule"></app-inner-title>
+  </div>
+  <div class="tab-container">
+    <ul class="tab-list">
+      <li class="tab bg-primary  " (click)="activateTab(1)" [class.active]="activeTab === 1">Policy and Card Rules</li>
+       
+    </ul>
+    <div class="tab-content">
+      <div *ngIf="activeTab === 1" class="tab-panel">
+        <app-card-rule></app-card-rule>
+      </div>
+       
+    </div>
+  </div>
+  
+<app-modal [toggleModal]="toggleEditModal">
+  <span buttonContent></span>
+  <div modalContent>
+    
+  </div>
+</app-modal>
+<app-modal [toggleModal]="toggleViewModal">
+  <span buttonContent></span>
+  <div modalContent>
+    
+  </div>
+</app-modal>
+

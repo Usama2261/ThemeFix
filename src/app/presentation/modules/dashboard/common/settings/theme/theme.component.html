@@ -1,0 +1,13 @@
+<div class="w-full h-full flex gap-5 flex-col justify-center items-center">
+  <p class="font-bold text-2xl">Theme</p>
+  <p class="font-bold text-md">Change theme</p>
+  <select class="select w-full max-w-xs"   [(ngModel)]="theme" >
+    <option disabled selected>Select</option>
+    <option value="default">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+  <div class="flex gap-3">
+    <button (click)="update()" class="btn btn-primary text-white">Update</button>
+    <button class="btn btn-primary btn-outline">Cancel</button>
+  </div>
+</div>

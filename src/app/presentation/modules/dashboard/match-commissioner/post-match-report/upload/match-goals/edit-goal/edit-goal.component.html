@@ -1,0 +1,67 @@
+<div class="flex flex-col" *ngIf="!message">
+    <div class="w-full text-center">
+      <p class="font-bold text-primary">Edit Team</p>
+    </div>
+    <div class="w-full text-center flex flex-row justify-center text-center mt-5">
+        <table>
+          <tr>
+            <td class="text-right pt-4">Team:</td>
+            <td class="pl-5">
+              <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                <option disabled selected>Select</option>
+                <option>Dar es Salaam</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right pt-4">Type:</td>
+            <td class="pl-5">
+              <select class="select w-full max-w-xs border select-sm bg-white" title="select Type">
+                <option disabled selected>Select</option>
+                <option value="Scores">Scores</option>
+                <option value="Cautions">Cautions</option>
+                <option value="Expulsion">Expulsion</option>
+              </select>
+            </td>
+            </tr>
+            <tr>
+              <td class="text-right pt-4">J/NO:</td>
+              <td class="pl-5">
+                <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                  <option disabled selected>Select</option>
+                  <option>001</option>
+                  <option>002</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-right pt-4">MNT:</td>
+              <td class="pl-5">
+                <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                  <option disabled selected>Select</option>
+                  <option *ngFor="let item of [].constructor(200); let i = index;">{{i+1}}</option>
+                </select>
+              </td>
+            </tr>
+        </table>
+      </div>
+    <div class="w-full text-center mt-4">
+      <button class="btn btn-primary btn-outline" (click)="update()">
+        Update
+      </button>
+      <button class="btn btn-primary btn-outline ml-3"  (click)="delete()">
+        Delete
+      </button>
+      <button class="btn btn-primary ml-4 text-white"  (click)="reset()">
+        Reset
+      </button>
+    </div>
+  </div>
+  <app-alert
+    *ngIf="message"
+    [type]="message.type"
+    [title]="message.title"
+    [message]="message.message"
+    (onConfirm)="handleConfirm($event)"
+  ></app-alert>
+  

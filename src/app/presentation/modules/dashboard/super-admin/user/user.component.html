@@ -1,0 +1,33 @@
+<div class="w-full p-6">
+  <app-inner-mobile-header
+    [title]="'Users'"
+    [backUrl]="'/dashboard/r/super-admin'"
+  ></app-inner-mobile-header>
+  <!-- menu row -->
+  <div class="flex justify-end">
+    <div>
+      <app-inner-search></app-inner-search>
+    </div>
+    <div class="flex flex-row gap-3">
+      <app-user-create></app-user-create>
+      <app-user-columns></app-user-columns>
+      <app-user-filter></app-user-filter>
+    </div>
+  </div>
+  <div>
+    <app-inner-title title="User list"></app-inner-title>
+  </div>
+  <div class="mt-5 w-full">
+    <app-inner-table
+    [table]="table"
+    (editClick)="handleEdit($event)"
+    (mobileRowClicked)="handleViewMobile($event)"
+    ></app-inner-table>
+  </div>
+</div>
+<app-modal [toggleModal]="toggleEditModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-user-edit [data]="editData"></app-user-edit>
+  </div>
+</app-modal>

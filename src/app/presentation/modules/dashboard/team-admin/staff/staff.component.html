@@ -1,0 +1,34 @@
+<div class="w-full p-6">
+  <div class="flex justify-end">
+  <div>
+      <app-inner-search></app-inner-search>
+    </div>
+    <div class="flex flex-row gap-3">
+      <app-staff-create></app-staff-create>
+      <app-staff-columns></app-staff-columns>
+    </div>
+  </div>
+  <div>
+    <app-inner-title title="Team Staff list"></app-inner-title>
+  </div>
+  <div class="mt-5 w-full">
+      <app-inner-table
+      [table]="table"
+      (editClick)="handleEdit($event)"
+      (viewClick)="handleView($event)"
+      ></app-inner-table>
+    </div>
+  
+  </div>
+    <app-modal [toggleModal]="toggleEditModal">
+      <span buttonContent></span>
+      <div modalContent>
+        <app-staff-edit [data]="editData"></app-staff-edit>
+      </div>
+    </app-modal>
+    <app-modal [toggleModal]="toggleViewModal">
+      <span buttonContent></span>
+      <div modalContent>
+        <app-staff-view [data]="viewData"></app-staff-view>
+      </div>
+    </app-modal>

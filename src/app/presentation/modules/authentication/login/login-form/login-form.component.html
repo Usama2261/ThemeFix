@@ -1,0 +1,63 @@
+<div class="w-full flex items-center justify-center">
+  <div class="h-content">
+    <div class="card w-96 mt-10 shadow-2xl bg-white">
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Email</span>
+            </label>
+            <input type="text" formControlName="email" placeholder="email" class="input input-bordered" />
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-error text-xs">
+
+              <p *ngIf="email?.errors?.['required']">
+                Email is required.
+              </p>
+              <p *ngIf="email?.errors?.['email']">
+                Email format incorrect.
+              </p>
+            </div>
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input type="password" formControlName="password" placeholder="password" class="input input-bordered" />
+
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-error text-xs">
+              <p *ngIf="password?.errors?.['required']">
+                Password is required.
+              </p>
+              <p *ngIf="password?.errors?.['minLength']">
+                Password must be 8 charaters.
+              </p>
+            </div>
+            <label class="label">
+              <a routerLink="/authentication/reset-password" class="label-text-alt link link-hover">Forgot password?</a>
+            </label>
+          </div>
+          <div class="form-control mt-6">
+            <button type="submit" class="btn btn-primary text-white"
+            [disabled]="!loginForm.valid">Login</button>
+          </div>
+          <div class="alert alert-error shadow-lg mt-4" *ngIf="error">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>{{error}}</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <p class="mt-10">Download user manuals:
+      <a class="text-primary" href="/assets/documents/manual-swahili.pdf">SW</a> |
+      <a class="text-primary" href="/assets/documents/manual-english.pdf">EN</a>
+    </p>
+    <p class="flex gap-4">Powered by:
+      <img src="/assets/tff-logo.png" alt="" class="w-8">
+    </p>
+  </div>
+</div>

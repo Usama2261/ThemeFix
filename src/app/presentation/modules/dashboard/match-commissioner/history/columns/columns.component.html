@@ -1,0 +1,31 @@
+<app-inner-button type="menu" (click)="_toggleDrawer()"></app-inner-button>
+<app-drawer [toggleDrawer]="toggleDrawer" title="Sort by">
+  <div drawerContent class="flex flex-col gap-4">
+    <div class="w-full text-right">
+      <p class="font-semibold">Parameters</p>
+    </div>
+    <div class="w-full flex flex-row">
+      <p class="flex-grow">User role</p>
+      <input type="radio" name="parameters" class="radio radio-primary" title="sort by" checked/>
+    </div>
+    <div class="w-full flex flex-row">
+      <p class="flex-grow">User name</p>
+      <input type="radio" name="parameters" class="radio radio-primary" title="sort by"/>
+    </div>
+    <div class="w-full flex flex-row">
+      <p class="flex-grow">Full name</p>
+      <input type="radio" name="parameters" class="radio radio-primary" title="sort by"/>
+    </div>
+    <div class="w-full text-right">
+      <p class="font-semibold">Order</p>
+    </div>
+    <div class="w-full flex flex-row">
+      <p class="flex-grow">Ascending</p>
+      <input type="radio" name="order" class="radio radio-primary" title="sort by" checked/>
+    </div>
+    <div class="w-full flex flex-row">
+      <p class="flex-grow">Descending</p>
+      <input type="radio" name="order" class="radio radio-primary" title="sort by"/>
+    </div>
+  </div>
+</app-drawer>

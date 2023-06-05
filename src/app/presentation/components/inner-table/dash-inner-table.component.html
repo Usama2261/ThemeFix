@@ -1,0 +1,108 @@
+<div class="overflow-x-auto rounded-none">
+  <!-- Desktop table -->
+  <table class="table w-full hidden md:[display:table]">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th *ngIf="table?.options?.checkboxes" class="bg-primary w-10">
+          <input title="select all" type="checkbox" class="checkbox" />
+        </th>
+        <th *ngIf="table?.options?.accordian"  class="small" >
+          More
+        </th>
+        <th class="" *ngFor="let header of table.headers">{{header.name}}</th>
+        <th class=""
+          *ngIf="table?.options?.edit ||table?.options?.view || table?.options?.upload||table?.options?.inlineActions">
+          Action</th>
+        <th class=""
+          *ngIf="table?.options?.form">
+          Form</th>
+        <th class="bg-primary text-white" *ngFor="let customColumn of table?.options?.customColumns">
+          {{customColumn.header}}</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of table.data" class="accordion-item"  >
+      <!-- row 1 -->
+
+      <tr >
+        <td *ngIf="table?.options?.checkboxes">
+          <input title="select" type="checkbox" [checked]="data.checked" class="checkbox" />
+        </td>
+        <td *ngIf="table?.options?.accordian" class="small" >
+          <div  (click)="toggleItem(data['acc'])">
+            
+            <span class="accordion-icon" [ngClass]="{'expanded': data['acc'].expanded}"></span>
+          </div>
+        </td>
+
+        <td class="bg-white" *ngFor="let header of table.headers"    >
+          <span  *ngIf="header.key=='club'"   > </span>
+          {{data[header.key]}}
+
+          <span *ngIf="header.key=='position'"  class="dot" (mouseenter)="onMouseEnter(data  )"  (mouseleave)="onMouseLeave( data)" > </span>
+          
+        </td>
+        <td class="bg-white"
+          *ngIf="table?.options?.edit ||table?.options?.view || table?.options?.upload||table?.options?.inlineActions">
+          <button class="btn-sm btn-primary text-primary bg-white border-none hover:text-white"
+            (click)="onEditClick(data)" *ngIf="data?.edit || table?.options?.edit">Edit</button>
+          <button class="btn-sm btn-primary text-primary bg-white border-none hover:text-white"
+            (click)="onViewClick(data)" *ngIf="data?.view || table?.options?.view">View</button>
+          <button class="btn-sm btn-primary text-blue-700 bg-white border-none hover:text-white"
+            (click)="onUploadClick(data)" *ngIf="data?.upload || table?.options?.upload">Upload</button>
+        </td>
+	<td  *ngIf="table?.options?.form"  >
+		<span class="small-box round" *ngFor="let curForm of data?.['forms']"  (mouseenter)="onMouseEnter(curForm)" (mouseleave)="onMouseLeave( curForm) "  >{{ curForm.status}} </span>
+	</td>
+        <td class="bg-white" *ngFor="let customColumn of table?.options?.customColumns">
+          <div *ngFor="let action of customColumn?.actions">
+            <button [attr.class]="action.classes" *ngIf="action.condition(data)"
+              (click)="onCustomColumnClick(data, action)">{{action?.text}}</button>
+          </div>
+        </td>
+      </tr>
+      <tr class="accordion-content" [hidden]="!data['acc'].expanded">
+        <td><div class="rotated-div rotated-content"> position</div> </td>
+         
+        <td colspan="11">
+        <div >
+          
+          <div class="chart">
+            
+     <div class="line"  *ngFor="let number of calculateMultiplesOf5(1, 20)"> <span class="num">{{number}}</span></div>
+      
+    <div >
+    <span *ngFor="let curForm of data?.['performance']" class="data-point" [style.top]="curForm.topPosition"     (mouseenter)="onMouseEnter(curForm)" (mouseleave)="onMouseLeave( curForm) " ></span>
+    </div>
+    <div>
+    <span *ngFor="let curForm of data?.['performance']" class="xaxis"   > {{curForm.matchNo}} </span>
+    </div>
+  </div>
+  
+  <div class="center"> Match Played</div>
+        </div>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Mobile table -->
+  <table class="table w-full md:hidden">
+    <tbody>
+      <!-- row 1 -->
+      <tr *ngFor="let data of table.data" (click)="_mobileRowClicked(data)">
+        <td *ngIf="table?.options?.checkboxes">
+          <input title="select" type="checkbox" [checked]="data.checked" class="checkbox" />
+        </td>
+        <td class="bg-white" *ngFor="let header of table.headers.slice(0,2)">{{data[header.key]}}</td>
+        <td class="bg-white">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.0562563 1.91875L1.16876 0.8125L7.35001 7L1.16251 13.1875L0.0562563 12.0812L5.13751 7L0.0562563 1.91875Z"
+              fill="#4D4D4D" />
+          </svg>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ 

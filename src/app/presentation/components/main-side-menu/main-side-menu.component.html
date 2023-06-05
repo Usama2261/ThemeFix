@@ -1,0 +1,31 @@
+<app-side-menu>
+  <!-- Sidebar content here -->
+  <li class="md:flex-grow-0 flex items-center justify-center md:w-20 flex-grow">
+    <a class="w-full py-6 flex items-center justify-center" routerLink="/dashboard/r/"
+      routerLinkActive="bg-white text-primary border-t-4 border-t-primary md:border-l-4 md:border-l-primary md:border-t-0"
+      [routerLinkActiveOptions]="{exact: false}" *ngIf="!isRoleMenu">
+      <fa-icon [icon]="homeIcon" class="text-lg"></fa-icon>
+    </a>
+    <a class="w-full py-6 flex items-center justify-center" routerLink="/dashboard/r/" *ngIf="isRoleMenu">
+      <fa-icon [icon]="homeIcon" class="text-lg"></fa-icon>
+    </a>
+  </li>
+  <app-data-manager-menu *ngIf="showDataManagerMenu"></app-data-manager-menu>
+  <app-league-director-menu *ngIf="showLeagueDirectorMenu"></app-league-director-menu>
+  <li class="flex md:flex-grow-0 flex-grow items-center justify-center md:w-20">
+    <a class="w-full py-6 flex items-center justify-center" routerLink="/dashboard/notifications"
+      routerLinkActive="bg-white text-primary border-t-4 border-t-primary md:border-l-4 md:border-l-primary md:border-t-0 md:w-20">
+      <fa-icon [icon]="notificationIcon" class="text-lg"></fa-icon>
+    </a>
+  </li>
+  <app-side-menu-item
+    class="flex-grow md:flex-grow-0"
+    d="M11.25 6.75H13.75V9.25H11.25V6.75ZM11.25 11.75H13.75V19.25H11.25V11.75ZM12.5 0.5C5.6 0.5 0 6.1 0 13C0 19.9 5.6 25.5 12.5 25.5C19.4 25.5 25 19.9 25 13C25 6.1 19.4 0.5 12.5 0.5ZM12.5 23C6.9875 23 2.5 18.5125 2.5 13C2.5 7.4875 6.9875 3 12.5 3C18.0125 3 22.5 7.4875 22.5 13C22.5 18.5125 18.0125 23 12.5 23Z"
+    viewBox="0 0 25 26" url="/dashboard/about-us"></app-side-menu-item>
+  <app-side-menu-item class="flex-grow flex flex-col justify-end" viewBox="0 0 26 26" url="/dashboard/settings"
+    d="M10.0825 0.5L9.46973 3.6543C8.43952 4.04282 7.49348 4.58741 6.66455 5.26807L3.63477 4.22314L0.714844 9.27686L3.1416 11.3862C3.04831 11.959 3 12.4898 3 13C3 13.511 3.04976 14.0408 3.1416 14.6138V14.6162L0.714844 16.7256L3.63477 21.7769L6.66211 20.7344C7.49112 21.4154 8.43929 21.957 9.46973 22.3457L10.0825 25.5H15.9175L16.5303 22.3457C17.5612 21.9569 18.5061 21.4132 19.3354 20.7319L22.3652 21.7769L25.2827 16.7256L22.8584 14.6138C22.9517 14.041 23 13.5102 23 13C23 12.4906 22.9514 11.9605 22.8584 11.3887V11.3862L25.2852 9.27441L22.3652 4.22314L19.3379 5.26562C18.5089 4.5846 17.5607 4.04304 16.5303 3.6543L15.9175 0.5H10.0825ZM12.1431 3H13.8569L14.3428 5.5L15.6465 5.99316C16.4323 6.28934 17.1383 6.69594 17.751 7.19922L18.8301 8.08301L21.2324 7.25781L22.0894 8.73975L20.1704 10.4097L20.3901 11.7842V11.7866C20.4666 12.2553 20.5 12.6485 20.5 13C20.5 13.3515 20.4666 13.7446 20.3901 14.2134L20.168 15.5879L22.0869 17.2578L21.23 18.7422L18.8301 17.9146L17.7485 18.8008C17.1359 19.3041 16.4323 19.7107 15.6465 20.0068H15.644L14.3403 20.5L13.8545 23H12.1431L11.6572 20.5L10.3535 20.0068C9.56768 19.7107 8.86166 19.3041 8.24902 18.8008L7.16992 17.917L4.76758 18.7422L3.91064 17.2603L5.83203 15.5879L5.60986 14.2183V14.2158C5.53452 13.7451 5.5 13.3508 5.5 13C5.5 12.6485 5.53343 12.2554 5.60986 11.7866L5.83203 10.4121L3.91064 8.74219L4.76758 7.25781L7.16992 8.08545L8.24902 7.19922C8.86166 6.69594 9.56768 6.28934 10.3535 5.99316L11.6572 5.5L12.1431 3ZM13 8C10.2543 8 8 10.2543 8 13C8 15.7457 10.2543 18 13 18C15.7457 18 18 15.7457 18 13C18 10.2543 15.7457 8 13 8ZM13 10.5C14.3893 10.5 15.5 11.6107 15.5 13C15.5 14.3893 14.3893 15.5 13 15.5C11.6107 15.5 10.5 14.3893 10.5 13C10.5 11.6107 11.6107 10.5 13 10.5Z">
+  </app-side-menu-item>
+  <app-side-menu-item class="flex-grow flex flex-col justify-end" viewBox="0 0 26 26" url="/authentication/logout"
+    d="M16,17V14H9V10H16V7L21,12L16,17M14,2A2,2 0 0,1 16,4V6H14V4H5V20H14V18H16V20A2,2 0 0,1 14,22H5A2,2 0 0,1 3,20V4A2,2 0 0,1 5,2H14Z">
+  </app-side-menu-item>
+</app-side-menu>

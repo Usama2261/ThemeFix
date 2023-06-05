@@ -1,0 +1,39 @@
+<div class="w-full p-6">
+  <!-- menu row -->
+   
+   
+  <div>
+    <app-inner-title title="Policy"></app-inner-title>
+  </div>
+  <div class="tab-container">
+    <ul class="tab-list">
+      <li class="tab bg-primary  " (click)="activateTab(1)" [class.active]="activeTab === 1">Privacy policy</li>
+      <li class="tab bg-primary  " (click)="activateTab(2)" [class.active]="activeTab === 2"> Terms & Conditions</li>
+      <li class="tab bg-primary  " (click)="activateTab(3)" [class.active]="activeTab === 3">Copyright Notice</li>
+    </ul>
+    <div class="tab-content">
+      <div *ngIf="activeTab === 1" class="tab-panel">
+        <app-privacy></app-privacy>
+      </div>
+      <div *ngIf="activeTab === 2" class="tab-panel">
+        <app-terms></app-terms>
+      </div>
+      <div *ngIf="activeTab === 3" class="tab-panel">
+        <app-copyright></app-copyright>
+      </div>
+    </div>
+  </div>
+  
+<app-modal [toggleModal]="toggleEditModal">
+  <span buttonContent></span>
+  <div modalContent>
+    
+  </div>
+</app-modal>
+<app-modal [toggleModal]="toggleViewModal">
+  <span buttonContent></span>
+  <div modalContent>
+    
+  </div>
+</app-modal>
+

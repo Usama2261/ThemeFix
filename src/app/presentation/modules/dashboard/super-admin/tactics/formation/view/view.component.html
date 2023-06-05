@@ -1,0 +1,26 @@
+
+<div class="flex flex-col" *ngIf="!message">
+  <div class="w-full text-center">
+    <p class="font-bold text-primary">View Tactics </p>
+  </div>
+  <div class="w-full flex flex-row justify-center text-center mt-5">
+    <table>
+      <tr>
+        <td class="text-right pt-4">Type of Formation:</td>
+        <td class="pl-5">{{  data?.playFormation}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Picture of Formation:</td>
+        <td class="pl-5">
+		<span	class="image-container" >
+		<img [src]="data?.formationPic"  />
+		</span>
+        </td>
+      </tr>
+      
+      
+  
+    </table>
+  </div>
+
+

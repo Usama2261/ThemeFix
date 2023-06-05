@@ -1,0 +1,95 @@
+<div class="w-full mt-5">
+    <div class="flex flex-col gap-2">
+  <!-- forms -->
+  <div class="flex flex-row gap-5">
+    <div class="flex-grow">
+      <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Formation"
+      (click)="setData($event)">
+        <option disabled selected>Choose Formation</option>
+        <option value="4-3-3 Attack-Minded Midfield">4-3-3 Attack-Minded Midfield</option>
+        <option value="4-3-3 Defensive-midfield">4-3-3 Defensive-midfield</option>
+        <option value="442diamond-midfield">4-4-2 diamond-midfield</option>
+        <option value="442flat-midfield">4-4-2 flat-midfield</option>
+      </select>
+    </div>
+  </div>
+
+  <table style="max-width:400px" *ngIf="formation == '4-3-3 Attack-Minded Midfield'">
+    <tr>
+      <td>
+        <p class="font-bold text-left"><img src="/assets/433attack-minded-midfield.jpeg" alt="" style="max-width: 100%;"></p>
+      </td>
+      <td></td>
+      <td>
+        <p class="font-bold text-right" style="padding: 18px;">Action</p>
+        <button class="btn btn-primary btn-outline ml-3">
+            Delete
+          </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="font-bold text-left font-semibold">4-3-3 Attack-Minded Midfield</p>
+      </td>
+    </tr>
+  </table>
+  <table style="max-width:400px" *ngIf="formation == '4-3-3 Defensive-midfield'">
+    <tr>
+      <td>
+        <p class="font-bold text-left"><img src="/assets/433defensive-midfield.jpeg" alt="" style="max-width: 100%;"></p>
+      </td>
+      <td></td>
+      <td>
+        <p class="font-bold text-right" style="padding: 18px;">Action</p>
+        <button class="btn btn-primary btn-outline ml-3">
+            Delete
+          </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="font-bold text-left font-semibold">4-3-3 Defensive-midfield</p>
+      </td>
+    </tr>
+  </table>
+  <table style="max-width:400px" *ngIf="formation == '442diamond-midfield'">
+    <tr>
+      <td>
+        <p class="font-bold text-left"><img src="/assets/442diamond-midfield.jpeg" alt="" style="max-width: 100%;"></p>
+      </td>
+      <td></td>
+      <td>
+        <p class="font-bold text-right" style="padding: 18px;">Action</p>
+        <button class="btn btn-primary btn-outline ml-3">
+            Delete
+          </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="font-bold text-left font-semibold">4-4-2 diamond-midfield</p>
+      </td>
+    </tr>
+  </table>
+  <table style="max-width:400px" *ngIf="formation == '442flat-midfield'">
+    <tr>
+      <td>
+        <p class="font-bold text-left"><img src="/assets/433attack-minded-midfield.jpeg" alt="" style="max-width: 100%;"></p>
+      </td>
+      <td></td>
+      <td>
+        <p class="font-bold text-right" style="padding: 18px;">Action</p>
+        <button class="btn btn-primary btn-outline ml-3">
+            Delete
+          </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="font-bold text-left font-semibold">4-4-2 flat-midfield</p>
+      </td>
+    </tr>
+  </table>
+    </div>
+  </div>
+  

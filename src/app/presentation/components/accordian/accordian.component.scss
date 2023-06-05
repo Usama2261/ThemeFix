@@ -1,0 +1,27 @@
+.accordion {
+    width: 100%;
+  }
+  
+  .accordion-item {
+    margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  .accordion-icon::after {
+    content: '\25BC';
+    float: right;
+  }
+  
+  .accordion-icon.expanded::after {
+    content: '\25B2';
+  }
+  
+  .accordion-content {
+    padding: 10px;
+    background-color: #ffffff;
+  }

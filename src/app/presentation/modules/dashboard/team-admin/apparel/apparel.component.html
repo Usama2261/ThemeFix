@@ -1,0 +1,27 @@
+<div class="w-full p-6">
+<div class="flex justify-end">
+<div>
+    <app-inner-search></app-inner-search>
+  </div>
+  <div class="flex flex-row gap-3">
+    <app-apparel-create></app-apparel-create>
+    <app-apparel-columns></app-apparel-columns>
+  </div>
+</div>
+<div>
+  <app-inner-title title="Team Apparel list"></app-inner-title>
+</div>
+<div class="mt-5 w-full">
+    <app-inner-table
+    [table]="table"
+    (editClick)="handleEdit($event)"
+    ></app-inner-table>
+  </div>
+
+</div>
+  <app-modal [toggleModal]="toggleEditModal">
+    <span buttonContent></span>
+    <div modalContent>
+      <app-apparel-edit [data]="editData"></app-apparel-edit>
+    </div>
+  </app-modal>

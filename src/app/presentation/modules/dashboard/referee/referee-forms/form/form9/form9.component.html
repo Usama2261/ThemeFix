@@ -1,0 +1,20 @@
+<div class="flex flex-col">
+    <div class="min-h-[400px]">
+        <div class="" [ngSwitch]="currentForm">
+            <app-forma *ngSwitchCase="'A'"></app-forma>
+            <app-formb *ngSwitchCase="'B'"></app-formb>
+            <app-formc *ngSwitchCase="'C'"></app-formc>
+        </div>
+    </div>    
+    <div class="w-full flex justify-center mt-5">
+      <div class="flex gap-5">
+        <div class="btn btn-primary text-white btn-circle" (click)="currentForm = 'A'">A
+        </div>
+        <button class="btn btn-primary text-white btn-circle"  (click)="currentForm = 'B'">B
+        </button>
+        <button class="btn btn-primary text-white btn-circle"  (click)="currentForm = 'C'">C
+        </button>
+      </div>
+    </div>
+</div>
+  

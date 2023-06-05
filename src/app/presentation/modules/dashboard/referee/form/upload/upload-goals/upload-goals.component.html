@@ -1,0 +1,42 @@
+<div class="w-full"><div class="overflow-x-auto">
+  <div class="w-full p-6">
+    <!-- menu row -->
+    <div class="flex justify-end">
+      <div>
+        <app-inner-search></app-inner-search>
+      </div>
+      <div class="flex flex-row gap-3">
+        <app-create-team-goal></app-create-team-goal>
+      </div>
+    </div>
+    <div class="w-full flex flex-col gap-5 justify-center mt-5 text-center">
+      <p class="font-semibold">
+        MAGOLI/Scores
+      </p>
+      <p class="font-semibold">onyesha endapo goli limefungwa kwa penati au adhabu ndogo au kawaida au amejifunga
+      </p>
+    </div>
+    <div class="mt-5 w-full">
+      <app-inner-table
+      [table]="table"
+      (editClick)="handleEdit($event)"
+      (deleteClick)="handleDelete($event)"
+      ></app-inner-table>
+    </div>
+  </div>
+  <app-modal [toggleModal]="toggleEditModal">
+    <span buttonContent></span>
+    <div modalContent>
+      <app-edit-team-goal [data]="editData"></app-edit-team-goal>
+    </div>
+  </app-modal>
+  <app-modal *ngIf="message" [toggleModal]="toggleDeleteModal">
+    <span buttonContent></span>
+    <div modalContent>
+      <app-alert *ngIf="message" [type]="message.type" [title]="message.title" [message]="message.message"
+        (onConfirm)="handleConfirm($event)"></app-alert>
+    </div>
+  </app-modal>
+</div>
+</div>
+

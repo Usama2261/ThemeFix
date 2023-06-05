@@ -1,0 +1,14 @@
+<div class="flex flex-row relative justify-center md:hidden p-5">
+  <!-- back button -->
+  <div class="absolute left-0 top-0 h-full flex items-center">
+    <button class="p-4" title="back button" (click)="navigate()">
+      <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.41 1.41L2.83 6L7.41 10.59L6 12L3.8147e-06 6L6 0L7.41 1.41Z" fill="#1A1A1A" />
+      </svg>
+    </button>
+  </div>
+  <div class="text-center">
+    <p class="text-2xl font-bold text-primary">{{title}}</p>
+    <p *ngIf="subTitle">{{subTitle}}</p>
+  </div>
+</div>

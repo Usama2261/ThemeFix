@@ -1,0 +1,26 @@
+<div class="w-full p-6">
+  
+  <div>
+    <app-inner-title title="Formation"></app-inner-title>
+  </div>
+  <div class="mt-5 w-full">
+    <app-inner-table
+    [table]="table"
+    (editClick)="handleEdit($event)"
+    (viewClick)="handleView($event)"
+    ></app-inner-table>
+  </div>
+</div>
+<app-modal [toggleModal]="toggleEditModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-formation-edit [data]="editData"></app-formation-edit>
+  </div>
+</app-modal>
+<app-modal [toggleModal]="toggleViewModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-formation-view [data]="viewData"></app-formation-view>
+  </div>
+</app-modal>
+

@@ -1,0 +1,14 @@
+<div class="bg-white p-4 shadow-sm flex flex-row w-full justify-center items-center">
+  <div class="px-3 w-12 h-full flex justify-center items-center">
+    <svg *ngIf="!notification.seen"
+    width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="5" r="5" fill="#F07023"/>
+      </svg>
+  </div>
+  <div class="flex-grow">
+    <p class="text-sm">{{notification.description}}</p>
+  </div>
+  <div class="w-32">
+    <p>{{notification.time}}</p>
+  </div>
+</div>

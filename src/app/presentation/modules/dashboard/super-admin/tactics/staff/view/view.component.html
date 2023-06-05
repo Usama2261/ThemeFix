@@ -1,0 +1,25 @@
+
+<div class="flex flex-col" *ngIf="!message">
+  <div class="w-full text-center">
+    <p class="font-bold text-primary">View Staff</p>
+  </div>
+  <div class="w-full flex flex-row justify-center text-center mt-5">
+    <table>
+      <tr>
+        <td class="text-right pt-4">Medic:</td>
+        <td class="pt-4">{{  data?.medic}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Coach:</td>
+        <td class="pt-4">{{  data?.coach}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Assistant  Coach:</td>
+        <td class="pt-4">{{  data?.assistantCoach}}   </td>
+      </tr>
+      
+  
+    </table>
+  </div>
+
+

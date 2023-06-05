@@ -1,0 +1,11 @@
+<div class="mt-5">
+  <app-inner-table
+    [table]="table"
+    (viewClick)="handleView($event)"></app-inner-table>
+</div>
+<app-modal [toggleModal]="toggleViewModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-league-director-view-match [data]="viewData"></app-league-director-view-match >
+  </div>
+</app-modal>

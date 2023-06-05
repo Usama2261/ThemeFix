@@ -1,0 +1,41 @@
+
+<div class="flex flex-col" *ngIf="!message">
+  <div class="w-full text-center">
+    <p class="font-bold text-primary">View Team </p>
+  </div>
+  <div class="w-full flex flex-row justify-center text-center mt-5">
+    <table>
+      <tr>
+        <td class="text-right pt-4">ID:</td>
+        <td class="pl-5">{{  data.id}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Picture:</td>
+        <td class="pl-5">
+		<span	class="image-container" >
+		<img [src]="data.staffPic"  />
+		</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">First Name:</td>
+        <td class="pl-5">{{  data.firstName}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Middle Name:</td>
+        <td class="pl-5">{{  data.middleName}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Last Name:</td>
+        <td class="pl-5">{{  data.lastName}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Job Description:</td>
+        <td class="pl-5">{{  data.jobdescription}}   </td>
+      </tr>
+      
+  
+    </table>
+  </div>
+
+

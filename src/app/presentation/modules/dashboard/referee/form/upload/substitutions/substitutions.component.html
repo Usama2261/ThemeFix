@@ -1,0 +1,41 @@
+<div class="w-full"><div class="overflow-x-auto">
+  <div class="w-full p-6">
+    <!-- menu row -->
+    <div class="flex justify-end">
+      <div>
+        <app-inner-search></app-inner-search>
+      </div>
+      <div class="flex flex-row gap-3">
+        <app-sub-create></app-sub-create>
+      </div>
+    </div>
+    <div class="w-full flex flex-col gap-5 justify-center mt-5 text-center">
+      <p class="font-semibold">
+        SUBSTITUTIONS
+      </p>
+    </div>
+    <div class="mt-5 w-full">
+      <app-inner-table
+      [table]="table"
+      (editClick)="handleEdit($event)"
+      (deleteClick)="handleDelete($event)"
+      ></app-inner-table>
+    </div>
+  </div>
+  <app-modal [toggleModal]="toggleEditModal">
+    <span buttonContent></span>
+    <div modalContent>
+      <app-sub-edit [data]="editData"></app-sub-edit>
+    </div>
+  </app-modal>
+  <app-modal *ngIf="message" [toggleModal]="toggleDeleteModal">
+    <span buttonContent></span>
+    <div modalContent>
+      <app-alert *ngIf="message" [type]="message.type" [title]="message.title" [message]="message.message"
+        (onConfirm)="handleConfirm($event)"></app-alert>
+    </div>
+  </app-modal>
+</div>
+</div>
+
+

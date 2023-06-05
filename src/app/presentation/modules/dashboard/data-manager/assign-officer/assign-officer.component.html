@@ -1,0 +1,26 @@
+<div class="w-full p-6">
+  <!-- menu row -->
+  <div class="flex">
+    <div class="flex-grow">
+      <p class="text-3xl font-bold text-primary ">Assign officials</p>
+      <p class="text-xl font-bold">Select matches</p>
+    </div>
+    <div>
+      <app-inner-search></app-inner-search>
+    </div>
+  </div>
+  <div class="flex w-full justify-end">
+    <button class="btn btn-primary-white" (click)="openModal()" >Assign</button>
+  </div>
+  <div class="mt-6 w-full">
+    <app-inner-table
+      [table]="table"></app-inner-table>
+  </div>
+</div>
+
+<app-modal [toggleModal]="toggleAssignModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-assign-officers-form [data]="assignData"></app-assign-officers-form>
+  </div>
+</app-modal>

@@ -1,0 +1,87 @@
+<div class="flex flex-col" *ngIf="!message">
+  <div class="w-full text-center">
+    <p class="font-bold text-primary">Edit Tactics</p>
+  </div>
+  <div class="w-full flex flex-row justify-center text-center mt-5">
+    <table>
+      <tr>
+        <td class="text-right pt-4">Location:</td>
+        <td class="pl-5">
+          <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Capacity:</td>
+        <td class="pl-5">
+          <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Tactics Owner:</td>
+        <td class="pl-5">
+          <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Tactics Name:</td>
+        <td class="pl-5">
+          <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">City:</td>
+        <td class="pl-5">
+          <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Inauguration date:</td>
+        <td class="pl-5">
+          <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Tactics image:</td>
+        <td class="pl-5">
+          <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Team(s):</td>
+        <td class="pl-5">
+          <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+            <option disabled selected>Select</option>
+            <option>Dar es Salaam</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Region:</td>
+        <td class="pl-5">
+          <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+            <option disabled selected>Select</option>
+            <option>Dar es Salaam</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="w-full text-center mt-4">
+    <button class="btn btn-primary btn-outline" (click)="update()">
+      Update
+    </button>
+    <button class="btn btn-primary btn-outline ml-3"  (click)="delete()">
+      Delete
+    </button>
+    <button class="btn btn-primary ml-4 text-white"  (click)="reset()">
+      Reset
+    </button>
+  </div>
+</div>
+<app-alert
+  *ngIf="message"
+  [type]="message.type"
+  [title]="message.title"
+  [message]="message.message"
+  (onConfirm)="handleConfirm($event)"
+></app-alert>

@@ -1,0 +1,30 @@
+<div class="w-full p-6">
+  <!-- menu row -->
+  <div class="flex">
+    <div class="flex-grow">
+      <p class="text-3xl font-bold text-primary ">Sheldon Schimmel</p>
+      <p class="text-xl font-bold">League Director</p>
+    </div>
+    <div>
+      <app-inner-search></app-inner-search>
+    </div>
+    <div class="flex flex-row gap-3" *ngIf="currentRoute == 'Upcoming'">
+      <app-league-director-upcoming-filter></app-league-director-upcoming-filter>
+      <app-league-director-upcoming-columns></app-league-director-upcoming-columns>
+    </div>
+    <div class="flex flex-row gap-3" *ngIf="currentRoute == 'History'">
+      <app-league-director-history-filter></app-league-director-history-filter>
+      <app-league-director-history-columns></app-league-director-history-columns>
+    </div>
+    <div class="flex flex-row gap-3" *ngIf="currentRoute == 'Current'">
+      <app-league-director-current-filter></app-league-director-current-filter>
+      <app-league-director-current-columns></app-league-director-current-columns>
+    </div>
+  </div>
+  <div class="mt-12 w-full">
+    <app-inner-tabs [tabs]="tabs"></app-inner-tabs>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

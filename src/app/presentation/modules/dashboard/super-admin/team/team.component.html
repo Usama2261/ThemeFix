@@ -1,0 +1,35 @@
+<div class="w-full p-6">
+  <!-- menu row -->
+  <div class="flex justify-end">
+    <div>
+      <app-inner-search></app-inner-search>
+    </div>
+    <div class="flex flex-row gap-3">
+      <app-team-create></app-team-create>
+      <app-team-columns></app-team-columns>
+      <app-team-filter></app-team-filter>
+    </div>
+  </div>
+  <div>
+    <app-inner-title title="Team list"></app-inner-title>
+  </div>
+  <div class="mt-5 w-full">
+    <app-inner-table
+    [table]="table"
+    (editClick)="handleEdit($event)"
+    (viewClick)="handleView($event)"
+    ></app-inner-table>
+  </div>
+</div>
+<app-modal [toggleModal]="toggleEditModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-team-edit [data]="editData"></app-team-edit>
+  </div>
+</app-modal>
+<app-modal [toggleModal]="toggleViewModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-team-view [data]="viewData"></app-team-view>
+  </div>
+</app-modal>

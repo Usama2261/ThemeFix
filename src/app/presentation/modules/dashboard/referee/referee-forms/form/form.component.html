@@ -1,0 +1,49 @@
+<div class="mt-5">
+    <app-inner-tabs type="dynamic">
+      <app-inner-tab [active]="step==1" [name]="'Details'" (click)="step=1"></app-inner-tab>
+      <app-inner-tab [active]="step==2" [name]="'1'" (click)="step=2"></app-inner-tab>
+      <app-inner-tab [active]="step==3" [name]="'2'" (click)="step=3"></app-inner-tab>
+      <app-inner-tab [active]="step==4" [name]="'3'" (click)="step=4"></app-inner-tab>
+      <app-inner-tab [active]="step==5" [name]="'4'" (click)="step=5"></app-inner-tab>
+      <app-inner-tab [active]="step==6" [name]="'5'" (click)="step=6"></app-inner-tab>
+      <app-inner-tab [active]="step==7" [name]="'6'" (click)="step=7"></app-inner-tab>
+      <app-inner-tab [active]="step==8" [name]="'7'" (click)="step=8"></app-inner-tab>
+      <app-inner-tab [active]="step==9" [name]="'8'" (click)="step=9"></app-inner-tab>
+      <app-inner-tab [active]="step==10" [name]="'9'" (click)="step=10"></app-inner-tab>
+      <app-inner-tab [active]="step==11" [name]="'10'" (click)="step=11"></app-inner-tab>
+      <app-inner-tab [active]="step==12" [name]="'11'" (click)="step=12"></app-inner-tab>
+      <app-inner-tab [active]="step==13" [name]="'12'" (click)="step=13"></app-inner-tab>
+    </app-inner-tabs>
+</div>
+<div class=" min-h-[400px]">
+  <div [ngSwitch]="step">
+    <app-referee-details *ngSwitchCase="1"></app-referee-details>
+     <app-form1 *ngSwitchCase="2"></app-form1>
+    <app-form2 *ngSwitchCase="3"></app-form2>
+    <app-form3 *ngSwitchCase="4"></app-form3>
+    <app-form4 *ngSwitchCase="5"></app-form4>
+    <app-form5 *ngSwitchCase="6"></app-form5>
+    <app-form6 *ngSwitchCase="7"></app-form6> 
+    <app-form7 *ngSwitchCase="8"></app-form7>
+    <app-form8 *ngSwitchCase="9"></app-form8>
+    <app-form9 *ngSwitchCase="10"></app-form9>
+    <app-form10 *ngSwitchCase="11"></app-form10>
+    <app-form11 *ngSwitchCase="12"></app-form11>
+    <app-form12 *ngSwitchCase="13"></app-form12>
+  </div>
+</div>
+
+  <div class="w-full flex justify-center mt-5">
+    <div class="flex gap-5">
+      <div class="btn btn-primary btn-outline">
+        Reset
+      </div>
+      <button class="btn btn-primary text-white">
+        Save Draft
+      </button>
+      <button class="btn btn-primary text-white" (click)="next()">
+        Next
+      </button>
+    </div>
+  </div>
+  

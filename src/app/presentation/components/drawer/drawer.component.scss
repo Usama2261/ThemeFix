@@ -1,0 +1,10 @@
+.invisible-drawer{
+  pointer-events: none;
+}
+
+.drawer.drawer-end > .drawer-toggle ~ .drawer-side {
+  pointer-events: none;
+}
+.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side {
+  pointer-events: all;
+}

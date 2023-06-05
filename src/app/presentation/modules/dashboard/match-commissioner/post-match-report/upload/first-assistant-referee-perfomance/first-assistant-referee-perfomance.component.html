@@ -1,0 +1,52 @@
+<div class="w-full">
+  <p class="text-center font-bold">1st Assistant Referee PERFORMANCE</p>
+  <div class="w-full flex mt-10 gap-10">
+    <div class="w-1/3 flex flex-col gap-3">
+      <button class="p-4 w-ful" (click)="tab=1" [ngClass]="tab==1?'bg-gray-400':'bg-gray-200'">
+        <div class="w-full flex justify-between">
+          <p class="font-bold">Personality</p>
+          <p>Pending</p>
+        </div>
+      </button>
+      <button class="p-4 w-ful" (click)="tab=2" [ngClass]="tab==2?'bg-gray-400':'bg-gray-200'">
+        <div class=" w-full flex justify-between">
+          <p class="font-bold">Position and Movement</p>
+          <p>Pending</p>
+        </div>
+      </button>
+      <button class="p-4 w-ful" (click)="tab=3" [ngClass]="tab==3?'bg-gray-400':'bg-gray-200'">
+        <div class=" w-full flex justify-between">
+          <p class="font-bold">Accuracy of Signals</p>
+          <p>Pending</p>
+        </div>
+      </button>
+      <button class="p-4 w-ful" (click)="tab=4" [ngClass]="tab==4?'bg-gray-400':'bg-gray-200'">
+        <div class=" w-full flex justify-between">
+          <p class="font-bold">Match Control</p>
+          <p>Pending</p>
+        </div>
+      </button>
+      <button class="p-4 w-ful" (click)="tab=5" [ngClass]="tab==5?'bg-gray-400':'bg-gray-200'">
+        <div class=" w-full flex justify-between">
+          <p class="font-bold">TeamWork</p>
+          <p>Pending</p>
+        </div>
+      </button>
+      <button class="p-4 w-full bg-primary mt-10">
+        <div class=" w-full flex justify-between text-white">
+          <p class="font-bold">TeamWork</p>
+          <p>Pending</p>
+        </div>
+      </button>
+    </div>
+    <div class="w-2/3 bg-gray-100 p-5">
+      <div [ngSwitch]="tab">
+        <app-farp-personality *ngSwitchCase="1"></app-farp-personality>
+        <app-farp-position-and-movement *ngSwitchCase="2"></app-farp-position-and-movement>
+        <app-farp-accuracy-of-signals *ngSwitchCase="3"></app-farp-accuracy-of-signals>
+        <app-farp-match-control *ngSwitchCase="4"></app-farp-match-control>
+        <app-farp-teamwork *ngSwitchCase="5"></app-farp-teamwork>
+      </div>
+    </div>
+  </div>
+</div>

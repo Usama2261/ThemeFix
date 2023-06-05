@@ -1,0 +1,61 @@
+<div class="mt-5">
+  <app-inner-tabs type="dynamic">
+    <app-inner-tab [active]="step==1" [name]="'Match'" (click)="step=1"></app-inner-tab>
+    <app-inner-tab [active]="step==2" [name]="'1'" (click)="step=2"></app-inner-tab>
+    <app-inner-tab [active]="step==3" [name]="'2'" (click)="step=3"></app-inner-tab>
+    <app-inner-tab [active]="step==4" [name]="'3'" (click)="step=4"></app-inner-tab>
+    <app-inner-tab [active]="step==5" [name]="'4'" (click)="step=5"></app-inner-tab>
+    <!-- <app-inner-tab [active]="step==6" [name]="'5'" (click)="step=6"></app-inner-tab> -->
+    <!-- <app-inner-tab [active]="step==7" [name]="'6'" (click)="step=7"></app-inner-tab> -->
+    <app-inner-tab [active]="step==6" [name]="'5'" (click)="step=6"></app-inner-tab>
+    <app-inner-tab [active]="step==7" [name]="'6'" (click)="step=7"></app-inner-tab>
+    <app-inner-tab [active]="step==8" [name]="'7'" (click)="step=8"></app-inner-tab>
+    <app-inner-tab [active]="step==9" [name]="'8'" (click)="step=9"></app-inner-tab>
+    <app-inner-tab [active]="step==10" [name]="'9'" (click)="step=10"></app-inner-tab>
+    <app-inner-tab [active]="step==11" [name]="'10'" (click)="step=11"></app-inner-tab>
+    <app-inner-tab [active]="step==12" [name]="'11'" (click)="step=12"></app-inner-tab>
+    <app-inner-tab [active]="step==13" [name]="'12'" (click)="step=13"></app-inner-tab>
+    <app-inner-tab [active]="step==14" [name]="'13'" (click)="step=14"></app-inner-tab>
+    <app-inner-tab [active]="step==15" [name]="'14'" (click)="step=15"></app-inner-tab>
+    <app-inner-tab [active]="step==16" [name]="'15'" (click)="step=16"></app-inner-tab>
+    <app-inner-tab [active]="step==17" [name]="'16'" (click)="step=17"></app-inner-tab>
+    <!-- <app-inner-tab [active]="step==20" [name]="'19'" (click)="step=20"></app-inner-tab> -->
+  </app-inner-tabs>
+</div>
+<div class="min-h-[400px] pt-5">
+  <div [ngSwitch]="step">
+    <app-match *ngSwitchCase="1"></app-match>
+    <app-general-details *ngSwitchCase="2"></app-general-details>
+    <app-match-officials *ngSwitchCase="3"></app-match-officials>
+    <app-match-goals *ngSwitchCase="4"></app-match-goals>
+    <app-substitutions *ngSwitchCase="5"></app-substitutions>
+    <!-- <app-disciplinary-action *ngSwitchCase="6"></app-disciplinary-action> -->
+    <!-- <app-player-behavior *ngSwitchCase="7"></app-player-behavior> -->
+    <app-pitch-state *ngSwitchCase="6"></app-pitch-state>
+    <app-sports-conduction *ngSwitchCase="7"></app-sports-conduction>
+    <app-security-and-safety *ngSwitchCase="8"></app-security-and-safety>
+    <app-treatment *ngSwitchCase="9"></app-treatment>
+    <app-markets-and-information *ngSwitchCase="10"></app-markets-and-information>
+    <app-evaluation-for-referee *ngSwitchCase="11"></app-evaluation-for-referee>
+    <app-first-assistant-referee-perfomance *ngSwitchCase="12"></app-first-assistant-referee-perfomance>
+    <app-second-assistant-referee-performance *ngSwitchCase="13"></app-second-assistant-referee-performance>
+    <app-fourth-official-performance *ngSwitchCase="14"></app-fourth-official-performance>
+    <app-match-hardship-assessment *ngSwitchCase="15"></app-match-hardship-assessment>
+    <app-team-discipline-assessment *ngSwitchCase="16"></app-team-discipline-assessment>
+    <app-fair-play *ngSwitchCase="17"></app-fair-play>
+    <!-- <app-remarks *ngSwitchCase="20"></app-remarks> -->
+  </div>
+</div>
+<div class="w-full flex justify-center mt-5">
+  <div class="flex gap-5">
+    <div class="btn btn-primary btn-outline">
+      Reset
+    </div>
+    <button class="btn btn-primary text-white">
+      Save Draft
+    </button>
+    <button class="btn btn-primary text-white" (click)="next()">
+      {{step == 17 ? 'Submit' : 'Next'}}
+    </button>
+  </div>
+</div>

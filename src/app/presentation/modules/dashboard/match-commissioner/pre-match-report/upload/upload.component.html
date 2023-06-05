@@ -1,0 +1,37 @@
+<div class="mt-5">
+  <app-inner-tabs type="dynamic">
+    <app-inner-tab [active]="step==1" [name]="'Match'" (click)="step=1"></app-inner-tab>
+    <app-inner-tab [active]="step==2" [name]="'Conditions'" (click)="step=2"></app-inner-tab>
+    <app-inner-tab [active]="step==3" [name]="'Operations'" (click)="step=3"></app-inner-tab>
+    <app-inner-tab [active]="step==4" [name]="'Cooperations'" (click)="step=4"></app-inner-tab>
+    <app-inner-tab [active]="step==5" [name]="'Color'" (click)="step=5"></app-inner-tab>
+    <app-inner-tab [active]="step==6" [name]="'Issue'" (click)="step=6"></app-inner-tab>
+    <app-inner-tab [active]="step==7" [name]="'Challenges'" (click)="step=7"></app-inner-tab>
+    <app-inner-tab [active]="step==8" [name]="'Final'" (click)="step=8"></app-inner-tab>
+  </app-inner-tabs>
+</div>
+<div class="min-h-[400px] pt-5">
+  <div [ngSwitch]="step">
+    <app-match *ngSwitchCase="1"></app-match>
+    <app-conditions *ngSwitchCase="2"></app-conditions>
+    <app-operations *ngSwitchCase="3"></app-operations>
+    <app-cooperations *ngSwitchCase="4"></app-cooperations>
+    <app-color *ngSwitchCase="5"></app-color>
+    <app-issue *ngSwitchCase="6"></app-issue>
+    <app-challenges *ngSwitchCase="7"></app-challenges>
+    <app-final *ngSwitchCase="8"></app-final>
+  </div>
+</div>
+<div class="w-full flex justify-center mt-5">
+  <div class="flex gap-5">
+    <div class="btn btn-primary btn-outline">
+      Reset
+    </div>
+    <button class="btn btn-primary text-white">
+      Save Draft
+    </button>
+    <button class="btn btn-primary text-white" (click)="next()">
+      Next
+    </button>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="w-full p-6">
+  <!-- menu row -->
+  <div class="flex justify-end">
+    <div>
+      <app-inner-search></app-inner-search>
+    </div>
+    <div class="flex flex-row gap-3">
+      <app-team-name-create></app-team-name-create>
+      <app-team-name-columns></app-team-name-columns>
+      <app-team-name-filter></app-team-name-filter>
+    </div>
+  </div>
+  <div>
+    <app-inner-title title="Team list"></app-inner-title>
+  </div>
+  <div class="w-full flex justify-center gap-5">
+    <p>Home stadium:</p>
+    <p>Stadium</p>
+    <p class="text-primary cursor-pointer" (click)="handleChangeStadium($event)">Change</p>
+  </div>
+  <div class="mt-5 w-full">
+    <app-inner-table
+    [table]="table"
+    (editClick)="handleEdit($event)"
+    (viewClick)="handleView($event)"
+    ></app-inner-table>
+  </div>
+</div>
+<app-modal [toggleModal]="toggleEditModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-team-name-edit [data]="editData"></app-team-name-edit>
+  </div>
+</app-modal>
+<app-modal [toggleModal]="toggleViewModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-team-name-view [data]="editData"></app-team-name-view>
+  </div>
+</app-modal>
+<app-modal [toggleModal]="toggleChangeStadiumModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-team-name-change-stadium [data]="editData"></app-team-name-change-stadium>
+  </div>
+</app-modal>

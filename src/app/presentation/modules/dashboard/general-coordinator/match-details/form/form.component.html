@@ -1,0 +1,33 @@
+<div class="mt-5">
+  <app-inner-tabs type="dynamic">
+    <app-inner-tab [active]="step==1" [name]="'Details'" (click)="step=1"></app-inner-tab>
+    <app-inner-tab [active]="step==2" [name]="'2'" (click)="step=2"></app-inner-tab>
+    <app-inner-tab [active]="step==3" [name]="'3'" (click)="step=3"></app-inner-tab>
+    <app-inner-tab [active]="step==4" [name]="'4'" (click)="step=4"></app-inner-tab>
+    <app-inner-tab [active]="step==5" [name]="'5'" (click)="step=5"></app-inner-tab>
+    <app-inner-tab [active]="step==6" [name]="'6'" (click)="step=6"></app-inner-tab>
+  </app-inner-tabs>
+</div>
+<div class="min-h-[400px] pt-5">
+  <div [ngSwitch]="step">
+    <app-detail *ngSwitchCase="1"></app-detail>
+    <app-results *ngSwitchCase="2"></app-results>
+    <app-match-officials *ngSwitchCase="3"></app-match-officials>
+    <app-meetings *ngSwitchCase="4"></app-meetings>
+    <app-conditions *ngSwitchCase="5"></app-conditions>
+    <app-environment *ngSwitchCase="6"></app-environment>
+  </div>
+</div>
+<div class="w-full flex justify-center mt-5">
+  <div class="flex gap-5">
+    <div class="btn btn-primary btn-outline">
+      Reset
+    </div>
+    <button class="btn btn-primary text-white">
+      Save Draft
+    </button>
+    <button class="btn btn-primary text-white" (click)="next()">
+      {{step == 6 ? 'Submit' : 'Next'}}
+    </button>
+  </div>
+</div>
