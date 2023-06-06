@@ -18,16 +18,8 @@ export class StateManagementService {
     );
   }
 
-  createMatchEvent(){
-    let model: any = {};
-    model['away_team'] = '1';
-    model['city'] = "example",
-    model['date'] = "24/11/2022",
-    model['home_team'] = "1",
-    model['round'] = "1",
-    model['stadium'] = "1",
-    model['tournament'] = "1",
-    model['venue'] = "karachi"
+  createMatchEvent(model: any){
+
     return this.http.post(
       this.url + 'data-manager/create-match-event',
       model,
@@ -54,12 +46,8 @@ export class StateManagementService {
     );
   }
 
-  createTournament(){
-    let model: any = {}
+  createTournament(model: any){
 
-    model['name']= "PSL";
-    model['year'] = 2023;
-    debugger
     return this.http.post(
       this.url + 'data-manager/create-tournament',
       model,

@@ -23,6 +23,7 @@ import { AssignOfficerComponent } from './assign-officer/assign-officer.componen
 import { AssignOfficersFormComponent } from './assign-officer/assign-officers-form/assign-officers-form.component';
 import { ViewMatchComponent } from './history/view/view.component';
 import { ViewPositionComponent } from './history/position/view.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ViewPositionComponent } from './history/position/view.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     DataManagerRoutingModule,
     ComponentsModule
   ]
