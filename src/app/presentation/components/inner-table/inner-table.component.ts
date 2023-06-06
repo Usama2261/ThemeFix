@@ -22,6 +22,8 @@ export class InnerTableComponent implements OnInit {
   @Input()
   table!: InnerTable
 
+  @Input() test!: string
+
   constructor() { }
 
   ngOnInit(): void {
