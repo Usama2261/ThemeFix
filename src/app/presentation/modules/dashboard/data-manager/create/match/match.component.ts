@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { MatchEvent } from 'src/app/core/models/matchEvent.model';
 import { StateManagementService } from 'src/app/core/services/state-management.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class MatchComponent implements OnInit {
 
   onCreate() {
     let model: any = {};
-    model['away_team'] = this.matchEvent.awat_team;
+    model['away_team'] = this.matchEvent.away_team;
     model['city'] = this.matchEvent.city,
     model['date'] = this.matchEvent.date,
     model['home_team'] = this.matchEvent.home_team,
@@ -30,13 +31,4 @@ export class MatchComponent implements OnInit {
   }
 }
 
-export class MatchEvent{
-  awat_team: string = '';
-  city: string = '';
-  date: string = '';
-  home_team: string = '';
-  round: string = '';
-  stadium: string = '';
-  tournament: string = '';
-  venue: string = '';
-}
+

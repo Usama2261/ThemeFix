@@ -27,17 +27,7 @@ export class StateManagementService {
     );
   }
 
-  updateMatchEvent(){
-    let model:any = {};
-    model['id'] = 1;
-    model['away_team'] = '1';
-    model['city'] = 'abcd';
-    model['date'] = '24/11/2022';
-    model['home_team'] = '1';
-    model['round'] = '1';
-    model['stadium'] = '1';
-    model['tournament'] = '1';
-    model['venue'] = 'mohali';
+  updateMatchEvent(model: any){
 
     return this.http.patch(
       this.url + 'data-manager/create-match-event',
@@ -66,7 +56,7 @@ export class StateManagementService {
     model['other_id'] = "1",
     model['other2_id'] = "2",
     model['tournament_id'] = 1
-    debugger
+
     return this.http.post(
       this.url + 'data-manager/assign-match-event',
       model,

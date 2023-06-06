@@ -9,37 +9,37 @@
       <!-- form element -->
       <div class="w-full flex flex-row items-center gap-4">
         <p class="font-semibold text-right w-1/2">Home Team:</p>
-        <select class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
-          <option disabled selected>Select</option>
-          <option>Homer</option>
-          <option>Marge</option>
-          <option>Bart</option>
-          <option>Lisa</option>
-          <option>Maggie</option>
+        <select [(ngModel)]="matchEvent.home_team" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
+          <option disabled selected value="">Select</option>
+          <option value="1">Homer</option>
+          <option value="2">Marge</option>
+          <option value="3">Bart</option>
+          <option value="4">Lisa</option>
+          <option value="5">Maggie</option>
         </select>
       </div>
       <!-- form element -->
       <div class="w-full flex flex-row items-center gap-4">
         <p class="font-semibold text-right w-1/2">Select Tournament:</p>
-        <select class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
-          <option disabled selected>Select</option>
-          <option>Homer</option>
-          <option>Marge</option>
-          <option>Bart</option>
-          <option>Lisa</option>
-          <option>Maggie</option>
+        <select [(ngModel)]="matchEvent.tournament" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
+          <option disabled selected value="">Select</option>
+          <option value="1">Homer</option>
+          <option value="2">Marge</option>
+          <option value="3">Bart</option>
+          <option value="4">Lisa</option>
+          <option value="5">Maggie</option>
         </select>
       </div>
       <!-- form element -->
       <div class="w-full flex flex-row items-center gap-4">
         <p class="font-semibold text-right w-1/2">City:</p>
-        <select class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
-          <option disabled selected>Select</option>
-          <option>Homer</option>
-          <option>Marge</option>
-          <option>Bart</option>
-          <option>Lisa</option>
-          <option>Maggie</option>
+        <select [(ngModel)]="matchEvent.city" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
+          <option disabled selected value="">Select</option>
+          <option value="NewYork">Homer</option>
+          <option value="NewYork">Marge</option>
+          <option value="NewYork">Bart</option>
+          <option value="NewYork">Lisa</option>
+          <option value="NewYork">Maggie</option>
         </select>
       </div>
       <!-- form element -->
@@ -71,37 +71,39 @@
       <!-- form element -->
       <div class="w-full flex flex-row items-center gap-4">
         <p class="font-semibold text-right w-1/2">Away Team:</p>
-        <select class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
-          <option disabled selected>Select</option>
-          <option>Homer</option>
-          <option>Marge</option>
-          <option>Bart</option>
-          <option>Lisa</option>
-          <option>Maggie</option>
+        <select [(ngModel)]="matchEvent.away_team" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
+          <option disabled selected value="">Select</option>
+          <option value="1">Homer</option>
+          <option value="2">Marge</option>
+          <option value="3">Bart</option>
+          <option value="4">Lisa</option>
+          <option value="5">Maggie</option>
         </select>
       </div>
       <!-- form element -->
       <div class="w-full flex flex-row items-center gap-4">
         <p class="font-semibold text-right w-1/2">Date:</p>
-        <select class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
+        <input type="date" placeholder="Type here" name="startDate" [(ngModel)]="matchEvent.date"
+          class="input input-sm max-w-xs border select-sm bg-white w-1/2" />
+        <!-- <select class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
           <option disabled selected>Select</option>
           <option>Homer</option>
           <option>Marge</option>
           <option>Bart</option>
           <option>Lisa</option>
           <option>Maggie</option>
-        </select>
+        </select> -->
       </div>
       <!-- form element -->
       <div class="w-full flex flex-row items-center gap-4">
         <p class="font-semibold text-right w-1/2">Stadium:</p>
-        <select class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
-          <option disabled selected>Select</option>
-          <option>Homer</option>
-          <option>Marge</option>
-          <option>Bart</option>
-          <option>Lisa</option>
-          <option>Maggie</option>
+        <select [(ngModel)]="matchEvent.stadium" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
+          <option disabled selected value="">Select</option>
+          <option value="1">Homer</option>
+          <option value="2">Marge</option>
+          <option value="3">Bart</option>
+          <option value="4">Lisa</option>
+          <option value="5">Maggie</option>
         </select>
       </div>
       <!-- form element -->
@@ -136,7 +138,7 @@
 
   </div>
   <div class="w-full flex justify-center gap-4 mt-7">
-    <button class="btn btn-primary-white">Update</button>
+    <button class="btn btn-primary-white" (click)="onUpdate()">Update</button>
     <button class="btn btn-primary btn-outline">Reset</button>
   </div>
 </div>
